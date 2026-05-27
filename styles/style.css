@@ -1,0 +1,21 @@
+:root {
+  font-size: 16px;
+
+  /* custom properties go here */
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+div.sidebar {
+  background-color: red;
+  flex: 0.35;
+  min-width: 600px;
+}
+
+div.main-content {
+  background-color: blue;
+  flex: 0.65;
+}
