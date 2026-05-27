@@ -18,4 +18,18 @@ div.sidebar {
 div.main-content {
   background-color: blue;
   flex: 0.65;
+
+  /* main content flow */
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+div.main-content div:last-child p {
+  font-size: 1rem;
+  font-weight: none;
 }
