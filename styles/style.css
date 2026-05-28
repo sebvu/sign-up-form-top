@@ -13,19 +13,24 @@ div.sidebar {
   background-color: red;
   flex: 0.35;
   min-width: 600px;
+  height: 100%;
+  overflow: hidden; /* clip image so it fits */
 }
 
 div.main-content {
   background-color: blue;
   flex: 0.65;
+  height: 100%;
 
   /* main content flow */
   display: flex;
   flex-direction: column;
 }
 
+/* define paragraph fonts */
+
 p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 

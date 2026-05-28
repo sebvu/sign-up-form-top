@@ -8,12 +8,90 @@
     <title>Sign Up Form</title>
   </head>
   <body>
-    <div class="sidebar"></div>
+    <div class="sidebar">
+      <img
+        alt="A hilly green landscape with a partly-cast mid afternoon and a single tree in the distance"
+        src="assets/dark-theme-picture.jpg"
+      />
+    </div>
     <div class="main-content">
-      <div><p>hi</p></div>
-      <div><p>hi</p></div>
-      <form></form>
-      <div><p>hi</p></div>
+      <header>
+        <img alt="Toggle light theme" src="assets/dark-mode-icon.svg" />
+      </header>
+      <div>
+        <h1>The Great Escape</h1>
+        <p>
+          You know you want to escape into the vast unknown, and from the
+          realities of life. All you need is a little bit of a nudge..
+        </p>
+        <p>Let's make that happen.</p>
+      </div>
+      <div>
+        <form method="/" action="post">
+          <h2>Sign up today.</h2>
+          <p>Please complete all the required (*) fields.</p>
+
+          <section>
+            <p>
+              <label for="first-name">FIRST NAME</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                placeholder="John"
+                required
+              />
+            </p>
+            <p>
+              <label for="last-name">LAST NAME</label>
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                placeholder="Doe"
+                required
+              />
+            </p>
+          </section>
+          <section>
+            <p>
+              <label for="mail">EMAIL</label>
+              <input
+                type="email"
+                id="mail"
+                name="user_email"
+                placeholder="john@email.com"
+                required
+              />
+            </p>
+            <p>
+              <label for="phone-number">PHONE NUMBER</label>
+              <input type="text" id="phone-number" name="user_number" />
+            </p>
+          </section>
+          <section>
+            <p>
+              <label for="password">PASSWORD</label>
+              <input type="text" id="password" name="user_password" required />
+            </p>
+            <p>
+              <label for="conf-password">CONFIRM PASSWORD</label>
+              <input type="text" id="conf-password" name="" required />
+            </p>
+          </section>
+        </form>
+      </div>
+      <div>
+        <p>
+          Already have an account?
+          <a
+            href="https://www.theodinproject.com"
+            target="_blank"
+            rel="noreferrer"
+            >Log in</a
+          >
+        </p>
+      </div>
     </div>
   </body>
 </html>
