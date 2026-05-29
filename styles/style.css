@@ -11,15 +11,22 @@ body {
 
 div.sidebar {
   background-color: red;
-  flex: 0.35;
-  min-width: 600px;
+  flex: 0.4;
+  min-width: 700px;
+  max-width: 1000px;
   height: 100%;
-  overflow: hidden; /* clip image so it fits */
+
+  overflow: hidden;
+}
+
+div.sidebar img {
+  object-fit: cover;
+  min-height: 100%;
 }
 
 div.main-content {
   background-color: blue;
-  flex: 0.65;
+  flex: 1;
   height: 100%;
 
   /* main content flow */
@@ -38,3 +45,4 @@ div.main-content div:last-child p {
   font-size: 1rem;
   font-weight: none;
 }
+
