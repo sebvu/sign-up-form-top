@@ -29,7 +29,7 @@
     --icon-switcher,
     url(../assets/icons/light-mode-icon.svg)
   );
-  --_alt-icon-switcher-img: var(--alt-icon-switcher, "Toggle dark theme");
+  --_alt-icon-switcher-img: var(--alt-icon-switcher, "Toggle Dark Theme Icon");
 }
 
 /* colors not officially set yet */
@@ -43,7 +43,7 @@
   --sidebar-img: url(../assets/images/dark-theme-picture.jpg);
   --alt-sidebar-img: "A hilly green landscape with a partly-cast mid afternoon and a single tree in the distance";
   --icon-switcher-img: url(../assets/icons/dark-mode-icon.svg);
-  --alt-icon-switcher-img: "Toggle light theme";
+  --alt-icon-switcher-img: "Toggle Light Theme Icon";
 }
 
 /* colors not officially set yet */
@@ -57,7 +57,7 @@
   --sidebar-img: url(../assets/images/light-theme-picture.jpg);
   --alt-sidebar-img: "A photo taked in a moving car of a flattened snowy mountainous edged landscape with the sun in the sky and trees scattered";
   --icon-switcher-img: url(../assets/icons/light-mode-icon.svg);
-  --alt-icon-switcher-img: "Toggle dark theme";
+  --alt-icon-switcher-img: "Toggle Dark Theme Icon";
 }
 
 body {
