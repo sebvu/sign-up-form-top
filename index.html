@@ -16,24 +16,24 @@
       />
     </div>
     <div class="main-content">
-      <header>
+      <header class="header">
         <img alt="Toggle light theme" src="assets/icons/dark-mode-icon.svg" />
       </header>
       <div>
         <h1>The Great Escape</h1>
-        <p>
+        <p class="paragraph paragraph--large">
           You know you want to escape into the vast unknown, and from the
           realities of life. All you need is a little bit of a nudge..
         </p>
-        <p>Let's make that happen.</p>
+        <p class="paragraph paragraph--large">Let's make that happen.</p>
       </div>
       <div>
         <form method="/" action="post">
-          <h2>Sign up today.</h2>
-          <p>Please complete all the required (*) fields.</p>
+          <h2 class="header header--small">Sign up today.</h2>
+          <p class="paragraph">Please complete all the required (*) fields.</p>
 
-          <section>
-            <p>
+          <section class="section">
+            <p class="paragraph">
               <label for="first-name">FIRST NAME</label>
               <input
                 type="text"
@@ -43,7 +43,7 @@
                 required
               />
             </p>
-            <p>
+            <p class="paragraph">
               <label for="last-name">LAST NAME</label>
               <input
                 type="text"
@@ -54,8 +54,8 @@
               />
             </p>
           </section>
-          <section>
-            <p>
+          <section class="section">
+            <p class="paragraph">
               <label for="mail">EMAIL</label>
               <input
                 type="email"
@@ -65,17 +65,17 @@
                 required
               />
             </p>
-            <p>
+            <p class="paragraph">
               <label for="phone-number">PHONE NUMBER</label>
               <input type="text" id="phone-number" name="user_number" />
             </p>
           </section>
           <section>
-            <p>
+            <p class="paragraph">
               <label for="password">PASSWORD</label>
               <input type="text" id="password" name="user_password" required />
             </p>
-            <p>
+            <p class="paragraph">
               <label for="conf-password">CONFIRM PASSWORD</label>
               <input type="text" id="conf-password" name="" required />
             </p>
@@ -83,7 +83,7 @@
         </form>
       </div>
       <div>
-        <p>
+        <p class="paragraph">
           Already have an account?
           <a
             href="https://www.theodinproject.com"

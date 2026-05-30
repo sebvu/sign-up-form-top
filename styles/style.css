@@ -21,27 +21,41 @@ body {
   height: 100vh;
 }
 
-p {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-div.main-content div:last-child p {
-  font-size: 1rem;
-  font-weight: none;
-}
-
 /* ======== */
 /* || Utility Styles */
 /* ======== */
+
+.paragraph {
+  /* temporary font family */
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 20px 0 20px 0;
+}
+
+.paragraph.paragraph--large {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.header {
+  /* temporary font family */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.header.header--small {
+  font-size: 2rem;
+  font-weight: bold;
+}
 
 /* ======== */
 /* || Sidebar Styles */
 /* ======== */
 
 .sidebar {
-  background-color: red;
   flex: 0.4;
+
+  background-color: red;
   min-width: 700px;
   max-width: 1000px;
   height: 100%;
@@ -53,16 +67,6 @@ div.main-content div:last-child p {
   object-fit: cover;
   min-height: 100%;
 }
-
-/* (image content control depending on dark or light)
-.sidebar__image.sidebar__image--dark {
-
-}
-
-.sidebar__image.sidebar__image--light {
-
-}
-*/
 
 /* ======== */
 /* || Main Content Styles */
