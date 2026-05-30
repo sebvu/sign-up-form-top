@@ -1,53 +1,100 @@
-main();
-
-function main() {
+function ThemeSwitcher(rootElement, sbObj, tsObj) {
+  // expose what style properties we are affecting
+  const styleContext = window.getComputedStyle(rootElement);
   const DARK = "dark";
   const LIGHT = "light";
+
+  // public
+
+  this.setDarkTheme = () => {
+    rootElement.className = DARK;
+
+    doImageShifts(getCurrentClassTheme());
+  };
+
+  this.setLightTheme = () => {
+    rootElement.className = LIGHT;
+
+    doImageShifts(getCurrentClassTheme());
+  };
+
+  this.toggleTheme = () => {
+    let currentClassTheme = getCurrentClassTheme();
+
+    rootElement.className =
+      currentClassTheme && currentClassTheme === DARK ? LIGHT : DARK;
+
+    doImageShifts(currentClassTheme);
+  };
+
+  // helpers
+
+  // change all image elements in page
+  let doImageShifts = () => {
+    // sidebar image
+    let sbImgSrc = cleanURLString(getPropertyValue(sbObj.src));
+    let sbImgAlt = cleanAltString(getPropertyValue(sbObj.alt));
+
+    // icon theme switcher
+    let themeIconImgSrc = cleanURLString(getPropertyValue(tsObj.src));
+    let themeIconImgAlt = cleanAltString(getPropertyValue(tsObj.alt));
+
+    sbObj.prop.setAttribute("src", sbImgSrc);
+    sbObj.prop.setAttribute("alt", sbImgAlt);
+    tsObj.prop.setAttribute("src", themeIconImgSrc);
+    tsObj.prop.setAttribute("alt", themeIconImgAlt);
+
+    console.log(`page theme switched to ${getCurrentClassTheme()}`);
+  };
+
+  let getCurrentClassTheme = () => rootElement.classList[0];
+
+  let getPropertyValue = (prop) => styleContext.getPropertyValue(prop);
+
+  // clean quotations around alt strs
+  let cleanAltString = (str) =>
+    str.slice(str.indexOf('"') + 1, str.lastIndexOf('"'));
+
+  // clean url(...) fragment and bring reference to root project level
+  let cleanURLString = (str) =>
+    str.slice(str.indexOf("/") + 1, str.lastIndexOf(")"));
+}
+
+function main() {
   const rootElement = document.documentElement;
-  const style = window.getComputedStyle(rootElement);
-  const themeSwitcherIcon = document.querySelector(".header__theme-switcher");
-  const sidebarImage = document.querySelector(".sidebar__image");
+  const themeSwitcherElem = document.querySelector(".header__theme-switcher");
+  const sidebarImgElem = document.querySelector(".sidebar__image");
 
-  themeSwitcherIcon.addEventListener("click", (e) => {
-    let currentThemeClass = rootElement.classList[0];
-    console.log(currentThemeClass);
+  function imageObj(propertyRef, srcProperty, altProperty) {
+    this.prop = propertyRef;
+    this.src = srcProperty;
+    this.alt = altProperty;
+  }
 
-    if (currentThemeClass && currentThemeClass === DARK) {
-      rootElement.className = LIGHT;
-    } else {
-      rootElement.className = DARK;
-    }
+  const sidebarObj = new imageObj(
+    sidebarImgElem,
+    "--_sidebar-img",
+    "--_alt-sidebar-img",
+  );
 
-    let sidebarImgUrl = style.getPropertyValue("--_sidebar-img");
-    let sidebarImgUrlSliced = sidebarImgUrl
-      .slice(sidebarImgUrl.indexOf("(") + 1, sidebarImgUrl.indexOf(")"))
-      .slice(3);
+  const themeSwitcherObj = new imageObj(
+    themeSwitcherElem,
+    "--_icon-switcher-img",
+    "--_alt-icon-switch-img",
+  );
 
-    let sidebarAlt = style.getPropertyValue("--_alt-sidebar-img");
-    let sidebarAltSliced = sidebarAlt.slice(
-      sidebarAlt.indexOf('"') + 1,
-      sidebarAlt.lastIndexOf('"'),
-    );
+  const themeSwitcher = new ThemeSwitcher(
+    rootElement,
+    sidebarObj,
+    themeSwitcherObj,
+  );
 
-    let iconImgUrl = style.getPropertyValue("--_icon-switcher");
-    let iconImgUrlSliced = iconImgUrl
-      .slice(iconImgUrl.indexOf("(") + 1, iconImgUrl.indexOf(")"))
-      .slice(3);
+  themeSwitcher.setLightTheme(); // default theme
 
-    let iconAlt = style.getPropertyValue("--_alt-icon-switcher");
-    let iconAltSliced = iconAlt.slice(
-      iconAlt.indexOf('"') + 1,
-      iconAlt.lastIndexOf('"'),
-    );
-
-    console.log(sidebarImgUrlSliced);
-    console.log(sidebarAltSliced);
-    console.log(iconImgUrlSliced);
-    console.log(iconAltSliced);
-
-    sidebarImage.setAttribute("src", sidebarImgUrlSliced);
-    sidebarImage.setAttribute("alt", sidebarAltSliced);
-    themeSwitcherIcon.setAttribute("src", iconImgUrlSliced);
-    themeSwitcherIcon.setAttribute("alt", iconAltSliced);
+  themeSwitcherElem.addEventListener("click", (e) => {
+    console.log("attempting theme toggle");
+    themeSwitcher.toggleTheme();
   });
 }
+
+main();
