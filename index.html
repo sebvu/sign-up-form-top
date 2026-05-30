@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/modern-css-reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Sign Up Form</title>
+    <script src="scripts/script.js" defer></script>
   </head>
   <body>
     <div class="sidebar">
@@ -17,10 +18,14 @@
     </div>
     <div class="main-content">
       <header class="header">
-        <img alt="Toggle light theme" src="assets/icons/dark-mode-icon.svg" />
+        <img
+          class="header__theme-switcher"
+          alt="Toggle light theme"
+          src="assets/icons/dark-mode-icon.svg"
+        />
       </header>
       <div>
-        <h1>The Great Escape</h1>
+        <h1 class="header">The Great Escape</h1>
         <p class="paragraph paragraph--large">
           You know you want to escape into the vast unknown, and from the
           realities of life. All you need is a little bit of a nudge..
@@ -30,7 +35,9 @@
       <div>
         <form method="/" action="post">
           <h2 class="header header--small">Sign up today.</h2>
-          <p class="paragraph">Please complete all the required (*) fields.</p>
+          <p class="paragraph paragraph--large">
+            Please complete all the required (*) fields.
+          </p>
 
           <section class="section">
             <p class="paragraph">

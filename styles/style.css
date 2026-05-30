@@ -40,7 +40,7 @@
   --header-color: #7f530a;
   --utility-color-two: #697a81;
   --utility-color-three: #7d8689;
-  --sidebar-image: url(../assets/images/dark-theme-picture.jpg);
+  --sidebar-img: url(../assets/images/dark-theme-picture.jpg);
   --alt-sidebar-img: "A hilly green landscape with a partly-cast mid afternoon and a single tree in the distance";
   --icon-switcher: url(../assets/icons/dark-mode-icon.svg);
   --alt-icon-switcher: "Toggle light theme";
@@ -71,7 +71,9 @@ body {
 
 .paragraph {
   /* temporary font family */
+  color: var(--_text-color);
   font-family: Georgia, "Times New Roman", Times, serif;
+
   margin: 20px 0 20px 0;
 }
 
@@ -82,6 +84,7 @@ body {
 
 .header {
   /* temporary font family */
+  color: var(--_header-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 3rem;
   font-weight: bold;
@@ -89,7 +92,6 @@ body {
 
 .header.header--small {
   font-size: 2rem;
-  font-weight: bold;
 }
 
 /* ======== */
@@ -100,7 +102,7 @@ body {
   flex: 0.4;
 
   background-color: red;
-  min-width: 700px;
+  min-width: 500px;
   max-width: 1000px;
   height: 100%;
 
@@ -116,8 +118,8 @@ body {
 /* || Main Content Styles */
 /* ======== */
 
-div.main-content {
-  background-color: blue;
+.main-content {
+  background-color: var(--_background-color);
   flex: 1;
   height: 100%;
 
