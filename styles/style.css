@@ -4,17 +4,61 @@
 
 :root {
   font-size: 16px;
+
+  /* general palette */
+  --_required-form-color: #ff2c2c;
+
+  /* color palettes sourced from https://coolors.co/image-picker */
+
+  /* if no colors are set, default to light */
+  --_background-color: var(--background-color, #a2a7ac);
+  --_text-color: var(--text-color, #292b2c);
+  --_header-color: var(--header-color, #82c8e5);
+  --_utility-color-one: var(--utility-color-one, #35383b);
+  --_utility-color-two: var(--utility-color-two, #82868b);
+  --_utility-color-three: var(--utility-color-three: #979ba2);
+  --_sidebar-img: var(
+    --sidebar-img,
+    url(../assets/images/light-theme-picture.jpg)
+  );
+  --_alt-sidebar-img: var(
+    --alt-sidebar-img,
+    "A photo taked in a moving car of a flattened snowy mountainous edged landscape with the sun in the sky and trees scattered"
+  );
+  --_icon-switcher: var(
+    --icon-switcher,
+    url(../assets/icons/light-mode-icon.svg)
+  );
+  --_alt-icon-switcher: var(--alt-icon-switcher, "Toggle dark theme");
 }
 
-/* dark and light theme definition 
+/* colors not officially set yet */
 :root.dark {
-
+  --background-color: #131003;
+  --text-color: #b0b1b4;
+  --utility-color-one: #3f3412;
+  --header-color: #7f530a;
+  --utility-color-two: #697a81;
+  --utility-color-three: #7d8689;
+  --sidebar-image: url(../assets/images/dark-theme-picture.jpg);
+  --alt-sidebar-img: "A hilly green landscape with a partly-cast mid afternoon and a single tree in the distance";
+  --icon-switcher: url(../assets/icons/dark-mode-icon.svg);
+  --alt-icon-switcher: "Toggle light theme";
 }
 
+/* colors not officially set yet */
 :root.light {
-
+  --background-color: #a2a7ac;
+  --text-color: #292b2c;
+  --header-color: #82c8e5;
+  --utility-color-one: #35383b;
+  --utility-color-two: #81868b;
+  --utility-color-three: #979ba2;
+  --sidebar-img: url(../assets/images/light-theme-picture.jpg);
+  --alt-sidebar-img: "A photo taked in a moving car of a flattened snowy mountainous edged landscape with the sun in the sky and trees scattered";
+  --icon-switcher: url(../assets/icons/light-mode-icon.svg);
+  --alt-icon-switcher: "Toggle dark theme";
 }
-*/
 
 body {
   display: flex;
