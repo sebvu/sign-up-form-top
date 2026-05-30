@@ -4,13 +4,31 @@
 
 :root {
   font-size: 16px;
-
-  /* custom properties go here */
 }
+
+/* dark and light theme definition 
+:root.dark {
+
+}
+
+:root.light {
+
+}
+*/
 
 body {
   display: flex;
   height: 100vh;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+div.main-content div:last-child p {
+  font-size: 1rem;
+  font-weight: none;
 }
 
 /* ======== */
@@ -21,11 +39,7 @@ body {
 /* || Sidebar Styles */
 /* ======== */
 
-/* ======== */
-/* || Main Content Styles */
-/* ======== */
-
-div.sidebar {
+.sidebar {
   background-color: red;
   flex: 0.4;
   min-width: 700px;
@@ -35,10 +49,24 @@ div.sidebar {
   overflow: hidden;
 }
 
-div.sidebar img {
+.sidebar__image {
   object-fit: cover;
   min-height: 100%;
 }
+
+/* (image content control depending on dark or light)
+.sidebar__image.sidebar__image--dark {
+
+}
+
+.sidebar__image.sidebar__image--light {
+
+}
+*/
+
+/* ======== */
+/* || Main Content Styles */
+/* ======== */
 
 div.main-content {
   background-color: blue;
@@ -51,13 +79,3 @@ div.main-content {
 }
 
 /* define paragraph fonts */
-
-p {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-div.main-content div:last-child p {
-  font-size: 1rem;
-  font-weight: none;
-}
