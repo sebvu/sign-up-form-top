@@ -32,75 +32,84 @@
         </p>
       </div>
       <div>
-        <form method="/" action="post">
-          <h2 class="header-text header-text--small">Sign up today.</h2>
-          <p class="paragraph paragraph--large">
-            Please complete all the required (<span
-              class="paragraph__span--important"
-              >*</span
-            >) fields.
-          </p>
-
-          <section class="section">
+        <h2 class="header-text header-text--small">Sign up today.</h2>
+        <form class="form" method="/" action="post">
+          <section class="form__section">
             <p class="paragraph">
-              <label for="first-name">FIRST NAME</label>
-              <input
-                type="text"
-                id="first-name"
-                name="first_name"
-                placeholder="John"
-                required
-              />
-            </p>
-            <p class="paragraph">
-              <label for="last-name">LAST NAME</label>
-              <input
-                type="text"
-                id="last-name"
-                name="last_name"
-                placeholder="Doe"
-                required
-              />
+              Please complete all the required (<span
+                class="paragraph__span--important"
+                >*</span
+              >) fields.
             </p>
           </section>
-          <section class="section">
-            <p class="paragraph">
-              <label for="mail">EMAIL</label>
-              <input
-                type="email"
-                id="mail"
-                name="user_email"
-                placeholder="john@email.com"
-                required
-              />
-            </p>
-            <p class="paragraph">
-              <label for="phone-number">PHONE NUMBER</label>
-              <input type="text" id="phone-number" name="user_number" />
-            </p>
+          <section class="form__section">
+            <div class="form__field-group">
+              <p class="paragraph">
+                <label for="first-name">FIRST NAME</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first_name"
+                  placeholder="John"
+                  required
+                />
+              </p>
+              <p class="paragraph">
+                <label for="last-name">LAST NAME</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last_name"
+                  placeholder="Doe"
+                  required
+                />
+              </p>
+              <p class="paragraph">
+                <label for="mail">EMAIL</label>
+                <input
+                  type="email"
+                  id="mail"
+                  name="user_email"
+                  placeholder="john@email.com"
+                  required
+                />
+              </p>
+            </div>
+            <div class="form__field-group">
+              <p class="paragraph">
+                <label for="phone-number">PHONE NUMBER</label>
+                <input type="text" id="phone-number" name="user_number" />
+              </p>
+              <p class="paragraph">
+                <label for="password">PASSWORD</label>
+                <input
+                  type="text"
+                  id="password"
+                  name="user_password"
+                  required
+                />
+              </p>
+              <p class="paragraph">
+                <label for="conf-password">CONFIRM PASSWORD</label>
+                <input type="text" id="conf-password" name="" required />
+              </p>
+            </div>
           </section>
-          <section>
+          <section class="form__section">
+            <button class="form__button" type="submit">Create Account</button>
+          </section>
+          <section class="form__section">
             <p class="paragraph">
-              <label for="password">PASSWORD</label>
-              <input type="text" id="password" name="user_password" required />
-            </p>
-            <p class="paragraph">
-              <label for="conf-password">CONFIRM PASSWORD</label>
-              <input type="text" id="conf-password" name="" required />
+              Already have an account?
+              <a
+                href="https://www.theodinproject.com"
+                target="_blank"
+                rel="noreferrer"
+                >Log in</a
+              >
             </p>
           </section>
         </form>
-      </div>
-      <div>
-        <p class="paragraph">
-          Already have an account?
-          <a
-            href="https://www.theodinproject.com"
-            target="_blank"
-            rel="noreferrer"
-            >Log in</a
-          >
-        </p>
       </div>
     </div>
   </body>
