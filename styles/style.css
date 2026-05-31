@@ -196,3 +196,15 @@ body {
 }
 
 /* define paragraph fonts */
+
+@media (max-width: 1200px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    min-width: none;
+    max-width: none;
+    padding-bottom: 0.5rem;
+  }
+}
