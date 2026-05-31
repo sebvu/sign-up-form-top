@@ -1,4 +1,12 @@
-function ThemeSwitcher(rootElement, sbObj, tsObj) {
+/* helper example image class to parse over multiple images */
+function ImageObj(imgClass, srcCustomProp, altCustomProp) {
+  this.class = imgClass;
+  this.srcProp = srcCustomProp;
+  this.altProp = altCustomProp;
+}
+
+/* abstracted theme switching logic object */
+function ThemeSwitcher(rootElement, imgArr) {
   // expose what style properties we are affecting
   const styleContext = window.getComputedStyle(rootElement);
   const DARK = "dark";
@@ -9,13 +17,13 @@ function ThemeSwitcher(rootElement, sbObj, tsObj) {
   this.setDarkTheme = () => {
     rootElement.className = DARK;
 
-    doImageShifts(getCurrentClassTheme());
+    doImageShifts();
   };
 
   this.setLightTheme = () => {
     rootElement.className = LIGHT;
 
-    doImageShifts(getCurrentClassTheme());
+    doImageShifts();
   };
 
   this.toggleTheme = () => {
@@ -24,25 +32,21 @@ function ThemeSwitcher(rootElement, sbObj, tsObj) {
     rootElement.className =
       currentClassTheme && currentClassTheme === DARK ? LIGHT : DARK;
 
-    doImageShifts(currentClassTheme);
+    doImageShifts();
   };
 
   // helpers
 
-  // change all image elements in page
+  // loop through imgArr and change any corresponding images
   let doImageShifts = () => {
-    // sidebar image
-    let sbImgSrc = cleanURLString(getPropertyValue(sbObj.src));
-    let sbImgAlt = cleanAltString(getPropertyValue(sbObj.alt));
+    imgArr.forEach((e) => {
+      const imgElem = document.querySelector(e.class);
+      const srcVal = cleanSrcString(getPropertyValue(e.srcProp));
+      const altVal = cleanAltString(getPropertyValue(e.altProp));
 
-    // icon theme switcher
-    let themeIconImgSrc = cleanURLString(getPropertyValue(tsObj.src));
-    let themeIconImgAlt = cleanAltString(getPropertyValue(tsObj.alt));
-
-    sbObj.prop.setAttribute("src", sbImgSrc);
-    sbObj.prop.setAttribute("alt", sbImgAlt);
-    tsObj.prop.setAttribute("src", themeIconImgSrc);
-    tsObj.prop.setAttribute("alt", themeIconImgAlt);
+      imgElem.setAttribute("src", srcVal);
+      imgElem.setAttribute("alt", altVal);
+    });
 
     console.log(`page theme switched to ${getCurrentClassTheme()}`);
   };
@@ -56,42 +60,28 @@ function ThemeSwitcher(rootElement, sbObj, tsObj) {
     str.slice(str.indexOf('"') + 1, str.lastIndexOf('"'));
 
   // clean url(...) fragment and bring reference to root project level
-  let cleanURLString = (str) =>
+  let cleanSrcString = (str) =>
     str.slice(str.indexOf("/") + 1, str.lastIndexOf(")"));
 }
 
 function main() {
   const rootElement = document.documentElement;
   const themeSwitcherElem = document.querySelector(".header__theme-switcher");
-  const sidebarImgElem = document.querySelector(".sidebar__image");
 
-  function imageObj(propertyRef, srcProperty, altProperty) {
-    this.prop = propertyRef;
-    this.src = srcProperty;
-    this.alt = altProperty;
-  }
+  /* example list of images to replace */
+  const imgArr = [
+    new ImageObj(
+      ".header__theme-switcher",
+      "--_icon-switcher-img",
+      "--_alt-icon-switch-img",
+    ),
+  ];
 
-  const sidebarObj = new imageObj(
-    sidebarImgElem,
-    "--_sidebar-img",
-    "--_alt-sidebar-img",
-  );
-
-  const themeSwitcherObj = new imageObj(
-    themeSwitcherElem,
-    "--_icon-switcher-img",
-    "--_alt-icon-switch-img",
-  );
-
-  const themeSwitcher = new ThemeSwitcher(
-    rootElement,
-    sidebarObj,
-    themeSwitcherObj,
-  );
+  const themeSwitcher = new ThemeSwitcher(rootElement, imgArr);
 
   themeSwitcher.setLightTheme(); // default theme
 
-  themeSwitcherElem.addEventListener("click", (e) => {
+  themeSwitcherElem.addEventListener("click", () => {
     console.log("attempting theme toggle");
     themeSwitcher.toggleTheme();
   });

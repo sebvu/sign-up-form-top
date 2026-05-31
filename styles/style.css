@@ -6,7 +6,7 @@
   font-size: 16px;
 
   /* general palette */
-  --_required-form-color: #ff2c2c;
+  --_warning-form-color: #ff2c2c;
 
   /* color palettes sourced from https://coolors.co/image-picker */
 
@@ -26,7 +26,7 @@
     "A photo taked in a moving car of a flattened snowy mountainous edged landscape with the sun in the sky and trees scattered"
   );
   --_icon-switcher-img: var(
-    --icon-switcher,
+    --icon-switcher-img,
     url(../assets/icons/light-mode-icon.svg)
   );
   --_alt-icon-switcher-img: var(--alt-icon-switcher, "Toggle Dark Theme Icon");
@@ -101,17 +101,13 @@ body {
 .sidebar {
   flex: 0.4;
 
-  background-color: red;
+  background-image: var(--_sidebar-img);
+  background-size: cover;
   min-width: 500px;
   max-width: 1000px;
   height: 100%;
 
   overflow: hidden;
-}
-
-.sidebar__image {
-  object-fit: cover;
-  min-height: 100%;
 }
 
 /* ======== */
