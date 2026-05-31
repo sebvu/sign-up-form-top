@@ -69,10 +69,6 @@ body {
 /* || Utility Styles */
 /* ======== */
 
-.--bottom-margin {
-  margin-bottom: 2em;
-}
-
 .paragraph {
   /* temporary font family */
   color: var(--_text-color);
@@ -131,6 +127,25 @@ body {
   flex: 1;
   height: 100%;
   padding: 5% 10%;
+}
+
+.theme-switcher {
+  width: auto;
+  height: 100%;
+}
+
+.main-content__block {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-content__block.main-content__block--content-column {
+  flex-direction: column;
+  gap: 0;
+  justify-content: space-between;
+}
+.main-content__block.main-content__block--bottom-margin {
+  margin-bottom: 2em;
 }
 
 /* define paragraph fonts */

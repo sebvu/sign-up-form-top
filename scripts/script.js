@@ -66,12 +66,12 @@ function ThemeSwitcher(rootElement, imgArr) {
 
 function main() {
   const rootElement = document.documentElement;
-  const themeSwitcherElem = document.querySelector(".header__theme-switcher");
+  const themeSwitcherElem = document.querySelector(".theme-switcher");
 
   /* example list of images to replace */
   const imgArr = [
     new ImageObj(
-      ".header__theme-switcher",
+      ".theme-switcher",
       "--_icon-switcher-img",
       "--_alt-icon-switch-img",
     ),

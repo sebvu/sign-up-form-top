@@ -11,15 +11,17 @@
   <body>
     <div class="sidebar"></div>
     <div class="main-content">
-      <header class="header">
+      <header class="main-content__block .main-content__block--display-flex">
         <img
-          class="header__theme-switcher"
+          class="theme-switcher"
           alt="Toggle Light Theme Icon"
           src="assets/icons/dark-mode-icon.svg"
         />
-      </header>
-      <div class="--bottom-margin">
         <h1 class="header-text">The Great Escape</h1>
+      </header>
+      <div
+        class="main-content__block main-content__block--bottom-margin main-content__block--content-column"
+      >
         <p class="paragraph paragraph--large">
           You know you want to escape into the vast unknown, and from the
           realities of life. All you need is a little bit of a nudge..
