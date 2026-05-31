@@ -162,6 +162,15 @@ body {
   min-width: 800px;
 }
 
+.main-content__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+
+  height: calc(2.5rem + 1vmin);
+}
+
 .theme-switcher {
   height: 100%;
 }
