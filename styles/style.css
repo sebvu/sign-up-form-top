@@ -127,6 +127,7 @@ body {
 
   background-image: var(--_sidebar-img);
   background-size: cover;
+  background-position: center;
   min-width: 500px;
   max-width: 1000px;
   height: 100%;
