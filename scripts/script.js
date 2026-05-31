@@ -79,7 +79,7 @@ function main() {
 
   const themeSwitcher = new ThemeSwitcher(rootElement, imgArr);
 
-  themeSwitcher.setLightTheme(); // default theme
+  themeSwitcher.setDarkTheme(); // default theme
 
   themeSwitcherElem.addEventListener("click", () => {
     console.log("attempting theme toggle");

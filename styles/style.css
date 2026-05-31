@@ -69,20 +69,37 @@ body {
 /* || Utility Styles */
 /* ======== */
 
+.header-text {
+  /* temporary font family */
+  color: var(--_header-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-size: clamp(1.6rem, 1.5rem + 1.5vw, 2.5rem); */
+  font-size: calc(2rem + 1vw);
+  font-weight: bold;
+}
+
+.header-text.header-text--small {
+  /* font-size: clamp(1.4rem, 1.2rem + 1.5vw, 2rem); */
+  font-size: calc(1.2rem + 1vw);
+}
+
 .paragraph {
   /* temporary font family */
   color: var(--_text-color);
   font-family: Georgia, "Times New Roman", Times, serif;
+  /* font-size: clamp(0.8rem, 0.75rem + 1.5vw, 1.4rem); */
+  font-size: calc(0.5rem + 0.5vw);
 
   margin: 20px 0 20px 0;
 }
 
 .paragraph.paragraph--large {
-  font-size: 1.4rem;
+  /* font-size: clamp(1.2rem, 1rem + 1.5vw, 1.6rem); */
+  font-size: calc(0.8rem + 0.5vw);
 }
 
 .paragraph.paragraph--bold {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .paragraph__span--italicize {
@@ -91,18 +108,6 @@ body {
 
 .paragraph__span--important {
   color: var(--_required-form-color);
-}
-
-.header-text {
-  /* temporary font family */
-  color: var(--_header-color);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.header-text.header-text--small {
-  font-size: 2rem;
 }
 
 /* ======== */
