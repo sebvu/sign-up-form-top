@@ -82,7 +82,11 @@ body {
   font-weight: bold;
 }
 
-.header {
+.paragraph__span--italicize {
+  font-style: italic;
+}
+
+.header-text {
   /* temporary font family */
   color: var(--_header-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -90,7 +94,7 @@ body {
   font-weight: bold;
 }
 
-.header.header--small {
+.header-text.header-text--small {
   font-size: 2rem;
 }
 
