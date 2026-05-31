@@ -195,7 +195,9 @@ body {
   flex-direction: column;
 }
 
-/* define paragraph fonts */
+/* ======== */
+/* || Media Query Content */
+/* ======== */
 
 @media (max-width: 1200px) {
   body {
