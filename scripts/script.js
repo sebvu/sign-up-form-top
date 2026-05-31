@@ -48,6 +48,29 @@ function ThemeSwitcher(rootElement, imgArr) {
       imgElem.setAttribute("alt", altVal);
     });
 
+    /* update sidebar credit */
+
+    const imgCredit = document.querySelector(".sidebar__credits");
+    const creditLink = document.createElement("a");
+    creditLink.setAttribute("target", "_blank");
+    creditLink.setAttribute("rel", "noreferrer");
+    imgCredit.textContent = "Photo by ";
+
+    if (getCurrentClassTheme() === DARK) {
+      creditLink.setAttribute(
+        "href",
+        "https://unsplash.com/photos/lone-tree-on-a-grassy-hill-under-cloudy-sky-dPm9bu1X9q0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink",
+      );
+      creditLink.textContent = "Filip Kvasnak";
+      imgCredit.append(creditLink);
+      imgCredit.appendChild(document.createTextNode(" on Unsplash"));
+    } else {
+      creditLink.setAttribute("href", "https://github.com/sebvu");
+      creditLink.textContent = "Jester";
+      imgCredit.append(creditLink);
+      imgCredit.appendChild(document.createTextNode(" (me!!)"));
+    }
+
     console.log(`page theme switched to ${getCurrentClassTheme()}`);
   };
 

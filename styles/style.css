@@ -93,6 +93,10 @@ body {
   margin: 20px 0 20px 0;
 }
 
+.paragraph.paragraph--text-white {
+  color: #b0b1b4;
+}
+
 .paragraph.paragraph--large {
   /* font-size: clamp(1.2rem, 1rem + 1.5vw, 1.6rem); */
   font-size: calc(0.8rem + 0.5vw);
@@ -106,7 +110,7 @@ body {
   font-style: italic;
 }
 
-.paragraph__span--important {
+.paragraph__span--required {
   color: var(--_required-form-color);
 }
 
@@ -116,12 +120,17 @@ body {
 
 .sidebar {
   flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 
   background-image: var(--_sidebar-img);
   background-size: cover;
   min-width: 500px;
   max-width: 1000px;
   height: 100%;
+  padding-bottom: 2rem;
 
   overflow: hidden;
 }
