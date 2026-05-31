@@ -6,7 +6,7 @@
   font-size: 16px;
 
   /* general palette */
-  --_warning-form-color: #ff2c2c;
+  --_required-form-color: #ff2c2c;
 
   /* color palettes sourced from https://coolors.co/image-picker */
 
@@ -79,11 +79,18 @@ body {
 
 .paragraph.paragraph--large {
   font-size: 1.4rem;
+}
+
+.paragraph.paragraph--bold {
   font-weight: bold;
 }
 
 .paragraph__span--italicize {
   font-style: italic;
+}
+
+.paragraph__span--important {
+  color: var(--_required-form-color);
 }
 
 .header-text {
