@@ -2,6 +2,24 @@
 /* || General Styles */
 /* ======== */
 
+@font-face {
+  font-family: "source_code";
+  src:
+    url("../assets/fonts/sourcecodepro-regular-webfont.woff2") format("woff2"),
+    url("../assets/fonts/sourcecodepro-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "trocchi";
+  src:
+    url("../assets/fonts/trocchi-webfont.woff2") format("woff2"),
+    url("../assets/fonts/trocchi-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   font-size: 16px;
 
@@ -72,30 +90,30 @@ body {
 .header-text {
   /* temporary font family */
   color: var(--_header-color);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  /* font-size: clamp(1.6rem, 1.5rem + 1.5vw, 2.5rem); */
+  font-family:
+    "trocchi", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: calc(2rem + 1vmin);
   font-weight: bold;
 }
 
 .header-text.header-text--small {
-  /* font-size: clamp(1.4rem, 1.2rem + 1.5vw, 2rem); */
   font-size: calc(1.3rem + 1vmin);
 }
 
 .paragraph {
   /* temporary font family */
   color: var(--_text-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  /* font-size: clamp(0.8rem, 0.75rem + 1.5vw, 1.4rem); */
-  font-size: calc(0.8rem + 0.5vmin);
+  font-family:
+    "source_code", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: calc(0.7rem + 0.5vmin);
 
   margin: 20px 0 20px 0;
 }
 
 .paragraph.paragraph--large {
-  /* font-size: clamp(1.2rem, 1rem + 1.5vw, 1.6rem); */
-  font-size: calc(1.1rem + 0.5vmin);
+  font-size: calc(1rem + 0.5vmin);
 }
 
 .paragraph.paragraph--text-white {
