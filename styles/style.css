@@ -34,10 +34,10 @@
 
 /* colors not officially set yet */
 :root.dark {
-  --background-color: #131003;
+  --background-color: #1a180e;
   --text-color: #b0b1b4;
   --utility-color-one: #3f3412;
-  --header-color: #7f530a;
+  --header-color: #a8793b;
   --utility-color-two: #697a81;
   --utility-color-three: #7d8689;
   --sidebar-img: url(../assets/images/dark-theme-picture.jpg);
@@ -49,9 +49,9 @@
 /* colors not officially set yet */
 :root.light {
   --background-color: #a2a7ac;
-  --text-color: #292b2c;
-  --header-color: #82c8e5;
-  --utility-color-one: #35383b;
+  --text-color: #35383b;
+  --header-color: #2a90b5;
+  --utility-color-one: #292b2c;
   --utility-color-two: #81868b;
   --utility-color-three: #979ba2;
   --sidebar-img: url(../assets/images/light-theme-picture.jpg);
