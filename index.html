@@ -38,7 +38,9 @@
             to...
           </p>
         </div>
-        <div>
+        <div
+          class="main-content__block main-content__block--content-column main-content__block--align-center"
+        >
           <h2 class="header-text header-text--small">Sign up today.</h2>
           <form class="form" method="/" action="post">
             <section class="form__section">
@@ -88,19 +90,17 @@
                   <input type="text" id="phone-number" name="user_number" />
                 </p>
                 <p class="paragraph">
-                  <label class="label" for="password">PASSWORD</label>
+                  <label class="label" for="pwd">PASSWORD</label>
                   <input
-                    type="text"
-                    id="password"
+                    type="password"
+                    id="pwd"
                     name="user_password"
                     required
                   />
                 </p>
                 <p class="paragraph">
-                  <label class="label" for="conf-password"
-                    >CONFIRM PASSWORD</label
-                  >
-                  <input type="text" id="conf-password" name="" required />
+                  <label class="label" for="conf-pwd">CONFIRM PASSWORD</label>
+                  <input type="password" id="conf-pwd" name="" required />
                 </p>
               </div>
             </section>
