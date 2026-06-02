@@ -25,6 +25,8 @@
 
   /* general palette */
   --_required-form-color: #ff2c2c;
+  --_form-invalid-color: #ff2c2c;
+  --_form-valid-color: #bcf0a5;
 
   /* color palettes sourced from https://coolors.co/image-picker */
 
@@ -231,6 +233,31 @@ body {
 .form__field-group {
   display: flex;
   flex-direction: column;
+}
+
+.input {
+  color: black;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.label:has(+ input:required)::before {
+  content: "* ";
+  color: var(--_required-form-color);
+}
+
+.input:user-invalid {
+  border-color: var(--_form-invalid-color);
+}
+
+.input:user-invalid + span::before {
+  content: "✖";
+  color: var(--_form-invalid-color);
+}
+
+.input:user-valid + span::before {
+  content: "✓";
+  color: var(--_form-valid-color);
 }
 
 /* ======== */
