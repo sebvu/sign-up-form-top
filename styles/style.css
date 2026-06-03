@@ -183,6 +183,8 @@ body {
 .main-content__block {
   display: flex;
   gap: 1rem;
+
+  width: 100%;
 }
 
 .main-content__block.main-content__block--content-column {
@@ -217,6 +219,7 @@ body {
 
 .form__field-group {
   display: flex;
+  flex: 1;
   flex-direction: column;
 }
 
@@ -236,13 +239,17 @@ body {
   border-color: var(--form-invalid-color);
 }
 
+.input + span {
+  position: absolute;
+}
+
 .input:user-invalid + span::before {
-  content: "✖";
+  content: "\00a0✖";
   color: var(--form-invalid-color);
 }
 
 .input:user-valid + span::before {
-  content: "✓";
+  content: "\00a0✓";
   color: var(--form-valid-color);
 }
 
