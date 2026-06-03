@@ -24,38 +24,21 @@
   font-size: 16px;
 
   /* general palette */
-  --_required-form-color: #ff2c2c;
-  --_form-invalid-color: #ff2c2c;
-  --_form-valid-color: #bcf0a5;
+  --required-form-color: #ff2c2c;
+  --form-invalid-color: #ff2c2c;
+  --form-valid-color: #bcf0a5;
 
   /* color palettes sourced from https://coolors.co/image-picker */
 
   /* if no colors are set, default to light */
-  --_background-color: var(--background-color, #a2a7ac);
-  --_text-color: var(--text-color, #292b2c);
-  --_header-color: var(--header-color, #82c8e5);
-  --_utility-color-one: var(--utility-color-one, #35383b);
-  --_utility-color-two: var(--utility-color-two, #82868b);
-  --_utility-color-three: var(--utility-color-three: #979ba2);
-  --_sidebar-img: var(
-    --sidebar-img,
-    url(../assets/images/light-theme-picture.jpg)
-  );
-  --_alt-sidebar-img: var(
-    --alt-sidebar-img,
-    "A photo taked in a moving car of a flattened snowy mountainous edged landscape with the sun in the sky and trees scattered"
-  );
-  --_icon-switcher-img: var(
-    --icon-switcher-img,
-    url(../assets/icons/light-mode-icon.svg)
-  );
-  --_alt-icon-switcher-img: var(--alt-icon-switcher, "Toggle Dark Theme Icon");
 }
 
 /* colors not officially set yet */
 :root.dark {
   --background-color: #1a180e;
+  --opposite-background-color: #a2a7ac;
   --text-color: #b0b1b4;
+  --opposite-text-color: #35383b;
   --utility-color-one: #3f3412;
   --header-color: #a8793b;
   --utility-color-two: #697a81;
@@ -69,7 +52,9 @@
 /* colors not officially set yet */
 :root.light {
   --background-color: #a2a7ac;
+  --opposite-background-color: #1s180e;
   --text-color: #35383b;
+  --opposite-text-color: #b0b1b4;
   --header-color: #2a90b5;
   --utility-color-one: #292b2c;
   --utility-color-two: #81868b;
@@ -91,7 +76,7 @@ body {
 
 .header-text {
   /* temporary font family */
-  color: var(--_header-color);
+  color: var(--header-color);
   font-family:
     "trocchi", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -105,7 +90,7 @@ body {
 
 .paragraph {
   /* temporary font family */
-  color: var(--_text-color);
+  color: var(--text-color);
   font-family:
     "source_code", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -131,7 +116,7 @@ body {
 }
 
 .paragraph__span--required {
-  color: var(--_required-form-color);
+  color: var(--required-form-color);
 }
 
 /* ======== */
@@ -145,7 +130,7 @@ body {
   justify-content: flex-end;
   align-items: center;
 
-  background-image: var(--_sidebar-img);
+  background-image: var(--sidebar-img);
   background-size: cover;
   background-position: center;
   min-width: 500px;
@@ -166,7 +151,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--_background-color);
+  background-color: var(--background-color);
   height: 100%;
   width: 100%;
   padding: 5% 10%;
@@ -236,28 +221,29 @@ body {
 }
 
 .input {
-  color: black;
-  border: 2px solid black;
+  color: #1a180e;
+  border: 2px solid gray;
+  background-color: white;
   font-weight: bold;
 }
 
 .label:has(+ input:required)::before {
   content: "* ";
-  color: var(--_required-form-color);
+  color: var(--required-form-color);
 }
 
 .input:user-invalid {
-  border-color: var(--_form-invalid-color);
+  border-color: var(--form-invalid-color);
 }
 
 .input:user-invalid + span::before {
   content: "✖";
-  color: var(--_form-invalid-color);
+  color: var(--form-invalid-color);
 }
 
 .input:user-valid + span::before {
   content: "✓";
-  color: var(--_form-valid-color);
+  color: var(--form-valid-color);
 }
 
 /* ======== */
@@ -302,6 +288,10 @@ body {
 
   .paragraph {
     font-size: calc(0.8rem + 0.5vmin);
+  }
+
+  .paragraph--text-center {
+    text-align: center;
   }
 
   .paragraph.paragraph--large {

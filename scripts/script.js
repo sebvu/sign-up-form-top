@@ -95,8 +95,8 @@ function main() {
   const imgArr = [
     new ImageObj(
       ".theme-switcher",
-      "--_icon-switcher-img",
-      "--_alt-icon-switch-img",
+      "--icon-switcher-img",
+      "--alt-icon-switch-img",
     ),
   ];
 
