@@ -52,7 +52,7 @@
 /* colors not officially set yet */
 :root.light {
   --background-color: #a2a7ac;
-  --opposite-background-color: #1s180e;
+  --opposite-background-color: #1a180e;
   --text-color: #35383b;
   --opposite-text-color: #b0b1b4;
   --header-color: #2a90b5;
@@ -207,6 +207,12 @@ body {
 }
 
 .form__button {
+  border-radius: 1em;
+  padding: 0.5rem 1rem;
+
+  background-color: var(--opposite-background-color);
+  color: var(--opposite-text-color);
+  font-weight: bold;
 }
 
 .form__section {
@@ -214,7 +220,7 @@ body {
 }
 
 .form__section.form__section--gap {
-  gap: 3em;
+  gap: 3rem;
 }
 
 .form__field-group {
@@ -246,7 +252,7 @@ body {
 .input:focus {
   box-shadow:
     0px 3px 3px 5px black,
-    inset 0em 0em 0.5em black;
+    inset 0rem 0rem 0.5rem black;
 }
 
 .input:user-invalid + span::before {
